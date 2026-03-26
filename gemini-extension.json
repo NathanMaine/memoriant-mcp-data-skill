@@ -1,0 +1,23 @@
+{
+  "name": "memoriant-mcp-data-skill",
+  "description": "Conversational data access via MCP server pattern. Query CRM, ticket systems, and databases in plain language with schema discovery and multi-source answer synthesis.",
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "query-data",
+      "path": "skills/query-data/SKILL.md"
+    },
+    {
+      "name": "discover-schema",
+      "path": "skills/discover-schema/SKILL.md"
+    },
+    {
+      "name": "explore-crm",
+      "path": "skills/explore-crm/SKILL.md"
+    },
+    {
+      "name": "query-tickets",
+      "path": "skills/query-tickets/SKILL.md"
+    }
+  ]
+}

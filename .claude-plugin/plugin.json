@@ -1,0 +1,15 @@
+{
+  "name": "memoriant-mcp-data-skill",
+  "version": "1.0.0",
+  "description": "Conversational data access via MCP server pattern. Query CRM, ticket systems, and databases in plain language. Natural language to SQL/API translation, schema discovery, and unified multi-system answers. 4 skills + 2 specialized agents.",
+  "author": {
+    "name": "Nathan Maine",
+    "url": "https://github.com/NathanMaine"
+  },
+  "homepage": "https://github.com/NathanMaine/mcp-conversational-data-agent",
+  "repository": "https://github.com/NathanMaine/memoriant-mcp-data-skill",
+  "license": "MIT",
+  "keywords": ["mcp", "data-access", "crm", "sql", "natural-language", "schema-discovery", "conversational-ai", "memoriant"],
+  "skills": "./skills/",
+  "agents": "./agents/"
+}
