@@ -1,0 +1,3 @@
+# Add your MCP runtime library here, e.g.:
+# mcp-some-library
+# plus any DB / web frameworks you choose.

@@ -136,6 +136,61 @@ Outputs `mcp-schema.md` with:
 - Engineering: natural language database exploration during development
 - Management: aggregate counts and summaries across all systems
 
+## Using the Actual Tool
+
+The full source code from [NathanMaine/mcp-conversational-data-agent](https://github.com/NathanMaine/mcp-conversational-data-agent) is bundled in `src/`. It implements an MCP server with three data tools: `crm`, `tickets`, and `legacy_db`.
+
+### Install
+
+```bash
+# Requires Python 3.8+
+cd src
+pip install -r requirements.txt
+```
+
+### Run the MCP Server
+
+```bash
+python src/server.py
+```
+
+The server exposes three MCP tools over stdio:
+
+| Tool | Description |
+|------|-------------|
+| `crm` | Query CRM accounts, contacts, reps, and contracts |
+| `tickets` | Query and filter support tickets by status, priority, customer |
+| `legacy_db` | Query orders, transactions, and product data |
+
+### Connect to Claude Code
+
+Add the server to your Claude Code MCP config:
+
+```json
+{
+  "mcpServers": {
+    "conversational-data": {
+      "command": "python",
+      "args": ["/path/to/src/src/server.py"]
+    }
+  }
+}
+```
+
+### Configuration
+
+Edit the tool files in `src/src/tools/` to point at your actual data sources:
+
+- `crm.py` — connect to your CRM (Salesforce, HubSpot, CSV, etc.)
+- `tickets.py` — connect to your ticketing system (Jira, Zendesk, etc.)
+- `legacy_db.py` — connect to your database (Postgres, SQLite, etc.)
+
+The tool implementations are intentionally simple stubs — replace the return values with real queries to your systems.
+
+### Full Documentation
+
+See the [mcp-conversational-data-agent repo](https://github.com/NathanMaine/mcp-conversational-data-agent) for the full architecture guide and examples.
+
 ## Source Repository
 
 Built from [NathanMaine/mcp-conversational-data-agent](https://github.com/NathanMaine/mcp-conversational-data-agent).
